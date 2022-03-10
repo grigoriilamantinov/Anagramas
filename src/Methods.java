@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Methods {
     public static void main(String[] args) {
@@ -77,11 +78,6 @@ class Anagrams {
 
         //НАЧИНАЮ ДИАЛОГ
 
-
-        System.out.print("Мда... Вы ввели: ");
-        System.out.println(Arrays.toString(array4));
-        System.out.print("А рыба взяла и перевернула все буквы, оставив цифры на месте: ");
-
         // ВНОШУ В ОРИГИНАЛЬНЫЙ МАССИВ ВЕРНЫЕ ДАННЫЕ
         j = 0;
         q = 0;
@@ -95,15 +91,18 @@ class Anagrams {
                 q++;
             }
         }
-        System.out.println(Arrays.toString(array1));
         String result = String.copyValueOf(array1);
         return result;
     }
 
 // ХРИСТА РАДИ, СДЕЛАЕМ ВИД, ЧТО КОММИТ БЫЛ ДО ЭТИХ СТРОК
-//    void reWorkProp (String word) {
-//        String[] stringArray = word.split(" ");
-//        fore
-//
-//    }
+    StringJoiner reWorkProp (String word) {
+        String[] stringArray = word.split(" ");
+        StringJoiner joiner = new StringJoiner(" ");
+        for (String element : stringArray ) {
+            String reWorkWord = reWorkWord(element);
+            joiner.add(reWorkWord);
+        }
+        return joiner;
+    }
 }
