@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.StringJoiner;
 
 public class App {
     public static void main(String[] args) {
@@ -7,7 +6,7 @@ public class App {
         Anagrams str = new Anagrams();
         Scanner sc = new Scanner(System.in);
         String a = sc.nextLine();
-        StringJoiner result = str.reWorkProp (a);
+        String result = str.reWorkSentence(a);
 
         System.out.println("Ответик-с: " + result);
     }
