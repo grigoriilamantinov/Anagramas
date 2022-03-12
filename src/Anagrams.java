@@ -8,7 +8,7 @@ public class Anagrams {
      * @return A set of characters written in reverse order that does not affect the digits.
      */
 
-    public String reWorkWord(String word)
+    public String reverseWord(String word)
     {
 
         char[] arrayMain = word.toCharArray();
@@ -72,12 +72,16 @@ public class Anagrams {
         return String.copyValueOf(arrayMain);
     }
 
+    /**A class that changes characters in words. The letters are written in reverse order, the numbers remain in their places.
+     * @param word A set of characters or words
+     * @return A set of characters written in reverse order that does not affect the digits.
+     */
 
-public String reWorkSentence(String word) {
+public String reverseSentence(String word) {
         String[] stringArray = word.split(" ");
         StringJoiner joiner = new StringJoiner(" ");
         for (String element : stringArray ) {
-            String reWorkWord = reWorkWord(element);
+            String reWorkWord = reverseWord(element);
             joiner.add(reWorkWord);
         }
 
