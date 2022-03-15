@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -99,22 +100,17 @@ public class Anagrams {
      * @param filePath The path to the file where you want to reverse the words
      * @return textAfterReverse
      */
-    public List<String> fileWordsReverse(String filePath) throws IOException {
+    public String fileWordsReverse(String filePath) throws IOException {
 
         List<String> text = Files.lines(Path.of(filePath)).collect(Collectors.toList());
+        StringJoiner joiner = new StringJoiner("\n");
+        String textAfterReverse = null;
 
-        System.out.println();
-        for (String originStringInFile : text) {
-            System.out.println(originStringInFile);
-        }
-        System.out.println();
-
-        List<String> textAfterReverse = new ArrayList<>();
-
+        List<String> arrayReverse = new ArrayList<>();
         for (String str : text ) {
-            textAfterReverse.add(reverseWordsInSentence(str));
+            arrayReverse.add(reverseWordsInSentence(str));
+            textAfterReverse = String.valueOf(joiner.add(str));
         }
-
         return textAfterReverse;
     }
 }

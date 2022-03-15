@@ -11,7 +11,7 @@ public class App {
 
         System.out.println("Здравстуйте! Введите пожалуйста путь до файла (Например: G:\\JAVA\\projects\\Anagrams\\src\\Poetry): ");
         String filePath = sc.nextLine();
-        List<String> result = null;
+        String result = null;
 
         boolean isExit = false;
         while (!isExit) {
@@ -27,12 +27,7 @@ public class App {
             }
         }
 
-        for (String stringInResult : result ) {
-            System.out.println(stringInResult);
-        }
-
+        System.out.println(result);
         System.out.println();
-        System.out.println("В следующий раз попрубуйте файл TRAP: G:\\JAVA\\projects\\Anagrams\\src\\TRAP");
-
     }
 }
