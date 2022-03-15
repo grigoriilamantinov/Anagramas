@@ -26,8 +26,7 @@ public class App {
                 filePath = sc.nextLine();
             }
         }
-
-        System.out.println(result);
+        System.out.println("Результат таков:\n" + result);
         System.out.println();
     }
 }

@@ -106,9 +106,14 @@ public class Anagrams {
         StringJoiner joiner = new StringJoiner("\n");
         String textAfterReverse = null;
 
-        List<String> arrayReverse = new ArrayList<>();
+        System.out.println("Текст из файла таков:");
+        List<String> arrayTextAfterReverse = new ArrayList<>();
         for (String str : text ) {
-            arrayReverse.add(reverseWordsInSentence(str));
+            arrayTextAfterReverse.add(reverseWordsInSentence(str));
+            System.out.println(str);
+        }
+        System.out.println();
+        for (String str : arrayTextAfterReverse) {
             textAfterReverse = String.valueOf(joiner.add(str));
         }
         return textAfterReverse;
