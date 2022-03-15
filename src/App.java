@@ -1,14 +1,24 @@
+import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        System.out.print("Введите сочетание букв и цифр, иногда разделяя их пробелами: ");
-        Anagrams str = new Anagrams();
+
+    public static void main(String[] args) throws IOException {
+
         Scanner sc = new Scanner(System.in);
-        String a = sc.nextLine();
-        String result = str.reWorkSentence(a);
+        Anagrams a = new Anagrams();
 
-        System.out.println("Ответик-с: " + result);
+        System.out.println("Здравстуйте! Введите пожалуйста путь до файла (Например: G:\\JAVA\\projects\\Anagrams\\src\\Poetry): ");
+        String filePath = sc.nextLine();
+        List<String> result = a.fileWordsReverse(filePath);
+
+        for (String stringInResult : result ) {
+            System.out.println(stringInResult);
+        }
+
+        System.out.println();
+        System.out.println("В следующий раз попрубуйте файл TRAP: G:\\JAVA\\projects\\Anagrams\\src\\TRAP");
+
     }
-
 }
