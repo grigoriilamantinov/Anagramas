@@ -9,12 +9,12 @@ import java.util.stream.Collectors;
 
 public class Anagrams {
 
-    /**
-     * Class for working with some words
-     *
-     * @param word A set of characters
+    /**Class for working with some words.
+     * @param word A set of characters.
      * @return A set of characters written in reverse order that does not affect the digits.
      */
+
+    public static final String SPACE = " ";
 
     private String reverseWord(String word) {
 
@@ -79,16 +79,14 @@ public class Anagrams {
         return String.copyValueOf(arrayMain);
     }
 
-    /**
-     * A class that changes characters in words. The letters are written in reverse order, the numbers remain in their places.
-     *
+    /** A class that changes characters in words. The letters are written in reverse order, the numbers remain in their places.
      * @param word A set of characters or words
      * @return A set of characters written in reverse order that does not affect the digits.
      */
 
     private String reverseWordsInSentence(String word) {
-        String[] stringArray = word.split(" ");
-        StringJoiner joiner = new StringJoiner(" ");
+        String[] stringArray = word.split(SPACE);
+        StringJoiner joiner = new StringJoiner(SPACE);
         for (String element : stringArray) {
             String reWorkWord = reverseWord(element);
             joiner.add(reWorkWord);
@@ -98,7 +96,6 @@ public class Anagrams {
     }
     /**
      * This method will return strings in which the letters will be reversed, but the numbers and signs will remain in their places.
-     *
      * @param filePath The path to the file where you want to reverse the words
      * @return textAfterReverse
      */
@@ -108,12 +105,11 @@ public class Anagrams {
         List<String> text = Files.lines(Path.of(filePath)).collect(Collectors.toList());
 
         System.out.println();
-        for (String originStringInFile : text ) {
+        for (String originStringInFile : text) {
             System.out.println(originStringInFile);
         }
         System.out.println();
 
-        Anagrams a = new Anagrams();
         List<String> textAfterReverse = new ArrayList<>();
 
         for (String str : text ) {
