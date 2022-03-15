@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
+/** Class for working with some words. */
 public class Anagrams {
-
-    /**Class for working with some words.
-     * @param word A set of characters.
-     * @return A set of characters written in reverse order that does not affect the digits.
-     */
 
     public static final String SPACE = " ";
 
+    /**
+     * @param word A set of characters.
+     * @return A set of characters written in reverse order that does not affect the digits.
+     */
     private String reverseWord(String word) {
 
         char[] arrayMain = word.toCharArray();
@@ -83,7 +83,6 @@ public class Anagrams {
      * @param word A set of characters or words
      * @return A set of characters written in reverse order that does not affect the digits.
      */
-
     private String reverseWordsInSentence(String word) {
         String[] stringArray = word.split(SPACE);
         StringJoiner joiner = new StringJoiner(SPACE);
@@ -94,12 +93,12 @@ public class Anagrams {
 
         return joiner.toString();
     }
+
     /**
      * This method will return strings in which the letters will be reversed, but the numbers and signs will remain in their places.
      * @param filePath The path to the file where you want to reverse the words
      * @return textAfterReverse
      */
-
     public List<String> fileWordsReverse(String filePath) throws IOException {
 
         List<String> text = Files.lines(Path.of(filePath)).collect(Collectors.toList());

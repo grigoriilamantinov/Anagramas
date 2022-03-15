@@ -17,10 +17,12 @@ public class App {
         while (!isExit) {
             try {
                 result = a.fileWordsReverse(filePath);
+                isExit = true;
+
             } catch (IOException e) {
                 System.out.println("Вы ввели неверный путь к файлу.");
                 System.out.println("Введите ещё раз:");
-                isExit = true;
+                isExit = false;
                 filePath = sc.nextLine();
             }
         }
