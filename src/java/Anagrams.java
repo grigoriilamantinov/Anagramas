@@ -2,7 +2,6 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -12,6 +11,7 @@ import java.util.stream.Collectors;
 public class Anagrams {
 
     public static final String SPACE = " ";
+    public static final String LINEBREAK = "\n";
 
     /**
      * @param word A set of characters.
@@ -103,14 +103,20 @@ public class Anagrams {
     public String fileWordsReverse(String filePath) throws IOException {
 
         List<String> text = Files.lines(Path.of(filePath)).collect(Collectors.toList());
-        StringJoiner joiner = new StringJoiner("\n");
-        String textAfterReverse = null;
+        StringJoiner joiner = new StringJoiner(LINEBREAK);
+        String textAfterReverse = "";
 
-        List<String> arrayReverse = new ArrayList<>();
+        System.out.println("\nТекст из файла таков:\n");
+        List<String> arrayTextAfterReverse = new ArrayList<>();
         for (String str : text ) {
-            arrayReverse.add(reverseWordsInSentence(str));
-            textAfterReverse = String.valueOf(joiner.add(str));
+                arrayTextAfterReverse.add(reverseWordsInSentence(str));
+                System.out.println(str);
         }
+
+        for (String str : arrayTextAfterReverse) {
+            textAfterReverse = joiner.add(str).toString();
+        }
+
         return textAfterReverse;
     }
 }
