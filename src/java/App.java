@@ -22,11 +22,10 @@ public class App {
             } catch (IOException e) {
                 System.out.println("Вы ввели неверный путь к файлу.");
                 System.out.println("Введите ещё раз:");
-                isExit = false;
                 filePath = sc.nextLine();
             }
         }
-        System.out.println("Результат таков:\n" + result);
+        System.out.println("\nРезультат таков:\n" + result);
         System.out.println();
     }
 }

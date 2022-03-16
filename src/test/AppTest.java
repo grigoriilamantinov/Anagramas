@@ -13,7 +13,7 @@ class AppTest {
     void shouldReverseLettersInWordsFromSentence() throws IOException {
 
         String filePath = "G:\\JAVA\\projects\\Anagrams\\src\\resources\\TextForTest";
-        String expectedResult = "адгоТ ен л3ан2з\n" + "я хынреЧ лед ииссоР.";
+        String expectedResult = "адгоТ ен л3ан2з\nя хынреЧ лед ииссоР.";
         String actualResult = a.fileWordsReverse(filePath);
 
         assertEquals(expectedResult, actualResult);
@@ -24,4 +24,6 @@ class AppTest {
         String filePath = "что?";
         assertThrows(InvalidPathException.class, () -> a.fileWordsReverse(filePath));
     }
+
+
 }
